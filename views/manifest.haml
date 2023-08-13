@@ -1,0 +1,17 @@
+!!! 1.1
+%html
+  %head
+    //%link{:rel => 'stylesheet', :href => "/#{locals[:piece]}.css"}
+    //%script{:type => 'text/javascript', :src => "/#{locals[:piece]}.js"}
+    %title
+      index for
+      = "/#{locals[:dir]}"
+  %body
+    %ul
+      - files = Dir["#{locals[:dir]}/*"].sort
+      - files.map! {|f| f[7..-1] }
+      - files.each do |file|
+        %li
+          %a{:href => "/#{file}"}
+            = file
+
