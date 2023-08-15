@@ -28,6 +28,15 @@ a:hover {
   color: #2bddff;
 }
 
+.focus p {
+  font-family: Arial;
+  font-size: 15px;
+  
+  line-height: 20px;
+  width: 600px;
+  margin-left: 3%;
+}
+
 .focus {
   display: none;
 
@@ -73,9 +82,6 @@ a:hover {
 #main p {
   margin: 20px 0;
   
-  font-size: 15px;
-  
-  line-height: 20px;
 }
 
 #main ul, #main ol {

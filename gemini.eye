@@ -2,7 +2,7 @@ Eye.config do
   logger '/home/ari/servers/eye.log'
 end
 
-HOST = "0.0.0.0"
+HOST = "127.0.0.1"
 PORT = 4002
 
 Eye.app 'gemini' do
