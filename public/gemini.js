@@ -2,6 +2,14 @@ var all_divs = ["about", "toc", "parties", "ari", "daniel", "rachel", "graylin",
 
 var selected = "logo";
 
+function insert_cheesecake()
+{
+  var username = 'dtmoynihan';
+  var hostname = 'gmail.com';
+  var linktext = username + '@' + hostname;
+  document.write("<a href='mailto:" + linktext + "'>dtmoynihan@gmail.com</a>");
+}
+
 function focus_on_div(focus) {
   // hide the current one
   var div = document.getElementById(selected);
