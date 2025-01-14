@@ -1,11 +1,17 @@
-require 'sinatra'
-
+require 'sinatra/base'
 
 class GeminiApp < Sinatra::Base
 
-  set :environment, :production
-  set :public_folder, 'public'
-  set :server, 'thin'
+  configure do
+    set :environment, :production
+    set :public_folder, 'public'
+
+    set :bind, "127.0.0.1"
+    set :port, 4001
+    set :server, "puma"
+
+    enable :logging
+  end
 
   before do
     response.headers['x-clacks-overhead'] = "GNU Terry Pratchett"

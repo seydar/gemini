@@ -2,17 +2,14 @@ Eye.config do
   logger '/home/ari/servers/eye.log'
 end
 
-HOST = "127.0.0.1"
-PORT = 4002
-
 Eye.app 'gemini' do
   working_dir File.expand_path(File.dirname(__FILE__))
 
-  process 'home' do
-    pid_file "tmp/thin.pid"
+  process 'gemini' do
+    pid_file "tmp/puma.pid"
     daemonize true
 
-    start_command "thin -R config.ru -a #{HOST} -p #{PORT} -d -P tmp/thin.pid -l logs/thin.log start"
+    start_command "ruby gemini.rb"
     stdall 'logs/default.log'
 
     stop_signals [:TERM, 10.seconds]
